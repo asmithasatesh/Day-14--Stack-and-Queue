@@ -52,6 +52,7 @@ namespace Stack_And_Queue_Operations
                     break;
                 case 2:
                     Console.WriteLine("Enter 1-to Enqueue Element to Queue");
+                    Console.WriteLine("Enter 2-to Dequeue on Queue");
                     int optionqueue = Convert.ToInt32(Console.ReadLine());
                     switch (optionqueue)
                     {
@@ -65,6 +66,22 @@ namespace Stack_And_Queue_Operations
                             //Display operation
                             Console.Write("\n-----DISPLAYING QUEUE ELEMENTS-----\n\n");
                             count = queue.DisplayQueue();
+                            break;
+
+                        case 2:
+                            //Push operations
+                            int total = 0;
+                            queue.Enqueue(56);
+                            queue.Enqueue(30);
+                            queue.Enqueue(70);
+
+                            //Display operation
+                            Console.Write("\n-----DISPLAYING QUEUE ELEMENTS-----\n\n");
+                            count = queue.DisplayQueue();
+                            for (int i = 0; i <= count; i++)
+                            {
+                                queue.Dequeue();
+                            }
                             break;
                     }
                     break;

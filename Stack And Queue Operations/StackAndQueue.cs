@@ -100,7 +100,17 @@ namespace Stack_And_Queue_Operations
             }
             return temp;
         }
-
+        //Dequeue data from front
+        public void Dequeue()
+        {
+            if (front == null)
+            {
+                Console.WriteLine("\nQueue is empty! Nothing to Pop");
+                return;
+            }
+            Console.WriteLine("\nDE QUEUED ELEMENT: {0}", front.data);
+            front = front.next;
+        }
         //Display Queue data
         public int DisplayQueue()
         {
