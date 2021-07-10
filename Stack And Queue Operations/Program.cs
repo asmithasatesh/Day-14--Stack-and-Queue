@@ -7,9 +7,11 @@ namespace Stack_And_Queue_Operations
         static void Main(string[] args)
         {
             //Creating object for stack and queue operations
+            StackAndQueue queue = new StackAndQueue();
             StackAndQueue stack = new StackAndQueue();
             Console.WriteLine("Welcome to Stack and Queue Operations!");
             Console.WriteLine("Enter 1 for Stack Operations");
+            Console.WriteLine("Enter 2 for Queue Operations");
             int ch = Convert.ToInt32(Console.ReadLine());
             switch (ch)
             {
@@ -45,6 +47,24 @@ namespace Stack_And_Queue_Operations
                                 stack.Pop();
 
                             }
+                            break;
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine("Enter 1-to Enqueue Element to Queue");
+                    int optionqueue = Convert.ToInt32(Console.ReadLine());
+                    switch (optionqueue)
+                    {
+                        case 1:
+                            //Add operations
+                            int count = 0;
+                            queue.Enqueue(56);
+                            queue.Enqueue(30);
+                            queue.Enqueue(70);
+
+                            //Display operation
+                            Console.Write("\n-----DISPLAYING QUEUE ELEMENTS-----\n\n");
+                            count = queue.DisplayQueue();
                             break;
                     }
                     break;

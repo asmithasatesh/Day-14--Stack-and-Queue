@@ -8,6 +8,7 @@ namespace Stack_And_Queue_Operations
     {
         Node top;
 
+        //STACK OPERATIONS
         //Push data at Top
         public void Push(int data)
         {
@@ -52,7 +53,7 @@ namespace Stack_And_Queue_Operations
             return top.data;
         }
         //Display stack data
-        public int Display()
+        public int DisplayStack()
         {
             Node temp = top;
             int count = 0;
@@ -64,5 +65,58 @@ namespace Stack_And_Queue_Operations
             }
             return count;
         }
+
+
+        //QUEUE OPERATIONS
+        Node front;
+
+        //Push data at rear
+        public void Enqueue(int data)
+        {
+            Node newNode = new Node(data);
+            Append(newNode);
+        }
+
+        //Add data at rear
+        public void Append(Node newNode)
+        {
+            if (front == null)
+            {
+                front = newNode;
+            }
+            else
+            {
+                Node temp = GetLastNode();
+                temp.next = newNode;
+
+            }
+        }
+        public Node GetLastNode()
+        {
+            Node temp = front;
+            while (temp.next != null)
+            {
+                temp = temp.next;
+            }
+            return temp;
+        }
+
+        //Display Queue data
+        public int DisplayQueue()
+        {
+            Node temp = front;
+            int count = 0;
+            while (temp != null)
+            {
+                count++;
+                Console.WriteLine("Stack element at {0} is: {1}", count, temp.data);
+                temp = temp.next;
+            }
+            return count;
+        }
+
+
+
+
     }
 }
